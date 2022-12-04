@@ -97,6 +97,8 @@
         "algorithm": "cpp",
         "ios": "cpp",
         "iterator": "cpp",
-        "locale": "cpp"
+        "locale": "cpp",
+        "__split_buffer": "cpp",
+        "stack": "cpp"
     }
 }

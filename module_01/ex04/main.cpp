@@ -15,6 +15,7 @@ int main (int ac, char **av)
         std:: string read;
         std:: string src;
         std:: string dest;
+        std::size_t found;
 
         file_name = av[1];
         src = av[2];
@@ -23,12 +24,21 @@ int main (int ac, char **av)
         file.open(file_name);
         if (file.is_open())
         {
-            std::getline(file, read);
+            std::ofstream outfile (file_name+".remplace");
+            while (file)
+            {
+                std::getline(file, read);
+                while ((found = read.find(src)) != std::string::npos)
+                {
+                    read.erase(found, src.length());
+                    read.insert(found, dest);
+                }
+                std::cout << read << std::endl;
+                outfile << read << std::endl;
+            }
+            outfile.close();
         }
-        std::size_t found = read.find("dd cc");
-        std::cout << read << std::endl;
-        read.erase(found, (read.length()+found));
+        file.close();
     }
-        
     return 0;
 }
