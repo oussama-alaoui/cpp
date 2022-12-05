@@ -99,6 +99,11 @@
         "iterator": "cpp",
         "locale": "cpp",
         "__split_buffer": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "__hash_table": "cpp",
+        "__node_handle": "cpp",
+        "__tree": "cpp",
+        "queue": "cpp",
+        "random": "cpp"
     }
 }
