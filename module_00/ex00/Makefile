@@ -6,13 +6,15 @@ CXXFLAGS		=  -std=c++98 -Wall -Wextra -Werror -I.
 
 NAME			= megaphone
 
+RM				= rm -f
+
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
 				$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:
-				"rm -rf" $(OBJS)
+				$(RM) $(OBJS)
 
 fclean:			clean
 				$(RM) $(NAME)

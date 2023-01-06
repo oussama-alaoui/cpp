@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 int main (int ac, char **av)
 {
@@ -10,13 +11,14 @@ int main (int ac, char **av)
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
     while (i < ac)
     {
+        std::string str(av[i]);
         j = 0;
-        while (av[i][j])
+        while (str[j])
         {
-            std::cout << (char)toupper(av[i][j]);
+            char c = toupper(str[j]);
+            std::cout << c;
             j++;
         }
-        std::cout << " ";
         i++;
     }
     std::cout << std::endl;

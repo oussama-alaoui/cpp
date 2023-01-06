@@ -1,4 +1,6 @@
-SRC = main.cpp
+SRC = main.cpp contact.cpp
+
+
 
 OBJS = $(SRC:.cpp=.o)
 
@@ -10,7 +12,7 @@ NAME = phonebook
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) Contact.hpp
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:

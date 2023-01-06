@@ -2,12 +2,33 @@
 #include <string>
 #include "contact.hpp"
 
+
+void print_all(contact contacts[8])
+{
+    std::cout << std::right << std::setw(10) << "Index";
+    std::cout << "|";
+    std::cout << std::right << std::setw(10) << "First Name";
+    std::cout << "|";
+    std::cout << std::right << std::setw(10) << "Last Name";
+    std::cout << "|";
+    std::cout << std::right << std::setw(10) << "Nick Name";
+    std::cout << "|";
+    std::cout << std::right << std::setw(10) << "Cell Phone";
+    std::cout << "|";
+    std::cout << std::right << std::setw(10) << "Secret";
+    std::cout << std::endl;
+    for (int i = 0; i < 8; i++)
+    {   
+        contacts[i].print_all(i);
+    }
+}
+
+
 int main() {
 
     contact contacts[8];
 
     std::string comande;
-    int sersh_index;
     int index = 0;
 
     while (std::cin >> comande) {
@@ -20,9 +41,7 @@ int main() {
             } else 
                 contacts[0].set_all(0);
         } else if (comande == "SEARCH") {
-            std::cin >> sersh_index;
-            // std::cout << "     index|first name| last name|  nickname" << std::endl;
-            contacts[sersh_index].print_all();
+            print_all(contacts);
         }
         else{
             std::cout << "unknown comande" << std::endl;
