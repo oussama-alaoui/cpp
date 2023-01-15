@@ -1,21 +1,23 @@
-SRC = main.cpp/
-	newZombie.cpp/
-	randomChump.cpp/
-	Zombie.cpp/
-	ZombieEvent.hpp/
+NAME = zombie
+
+HEADERS = zombie.hpp
+
+SRC = main.cpp newZombie.cpp randomChump.cpp zombie.cpp
+
+CXX = c++
+
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror 
 
 OBJS = $(SRC:.cpp=.o)
 
-CXX = clang++
+$(NAME): $(OBJS) $(HEADERS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-CXXFLAGS = -Wall -Wextra -Werror -I.
-
-NAME = zombie
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+%.o : %.cpp $(HEADERS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS)
@@ -26,3 +28,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+

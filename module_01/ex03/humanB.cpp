@@ -1,6 +1,6 @@
 #include "humanB.hpp"
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name) : name(name)
 {
     std::cout << name <<" constructor called" << std::endl;
 }
@@ -17,5 +17,9 @@ void HumanB::setWeapon(Weapon& weapon)
 
 void HumanB::attack()
 {
-    std::cout << name << " attacks with his " << weapon->getType() << std::endl;
+    if (weapon) {
+      std::cout << this->name << " attacks with their " << weapon->getType() << std::endl;
+    } else {
+      std::cout << this->name << " is unarmed" << std::endl;
+    }
 }

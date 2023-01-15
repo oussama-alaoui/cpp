@@ -6,7 +6,7 @@ int main (int ac, char **av)
 {
     if (ac < 4)
     {
-        std::cout << "khasak dir 3 dyal arg" << std::endl;
+        std::cout << "Program need : " << " <filename> <string1> <string2>" << std::endl;
     }
     else
     {
@@ -24,7 +24,7 @@ int main (int ac, char **av)
         file.open(file_name);
         if (file.is_open())
         {
-            std::ofstream outfile (file_name+".remplace");
+            std::ofstream outfile (file_name+std::string(".replace"));
             while (file)
             {
                 std::getline(file, read);
@@ -33,7 +33,6 @@ int main (int ac, char **av)
                     read.erase(found, src.length());
                     read.insert(found, dest);
                 }
-                std::cout << read << std::endl;
                 outfile << read << std::endl;
             }
             outfile.close();
