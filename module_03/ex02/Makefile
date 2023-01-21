@@ -1,10 +1,10 @@
-NAME = fixed
+NAME = FragTrap
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRC = main.cpp ClapTrap.cpp FragTrap.cpp
 
 CXX = c++
 
-HEADER = fixed.hpp
+HEADER = FragTrap.hpp
 
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror 
 

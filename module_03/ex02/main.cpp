@@ -1,17 +1,12 @@
-#include "ClapTrap.hpp"
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-    ScavTrap *scavTrap = new ScavTrap("SC4V-TP");
-    if (!scavTrap) {
-        std::cout << "Error: cannot allocate memory for ScavTrap" << std::endl;
-        return 1;
-    }
-    scavTrap->attack("Enemy");
-    scavTrap->takeDamage(5);
-    scavTrap->beRepaired(10);
-    scavTrap->guardGate();
-    delete scavTrap;
+    FragTrap *fragTrap = new FragTrap("FR4G-TP");
+    fragTrap->attack("Enemy");
+    fragTrap->takeDamage(5);
+    fragTrap->beRepaired(10);
+    fragTrap->highFivesGuys();
+    delete fragTrap;
     return 0;
 }

@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include "Brin.hpp"
 
 class Animal{
     protected:
