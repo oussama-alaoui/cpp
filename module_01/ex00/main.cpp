@@ -1,7 +1,7 @@
 #include "zombie.hpp"
 
 int main() {
-    Zombie *zombie = newZombie("foo");
+    Zombie *zombie = new (std::nothrow) Zombie("foo");
     zombie->announce();
     randomChump("bar");
     delete zombie;

@@ -3,7 +3,7 @@
 #include "ScavTrap.hpp"
 
 int main() {
-    ScavTrap *scavTrap = new ScavTrap("SC4V-TP");
+    ScavTrap *scavTrap = new (std::nothrow)  ScavTrap("SC4V-TP");
     if (!scavTrap) {
         std::cout << "Error: cannot allocate memory for ScavTrap" << std::endl;
         return 1;

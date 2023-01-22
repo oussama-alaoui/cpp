@@ -2,7 +2,7 @@
 
 Dog::Dog() : Animal("Dog") {
     std::cout << "Dog constructor called" << std::endl;
-    this->brain = new (std::nothrow)  Brain();
+        this->brain = new (std::nothrow) (std::nothrow) Brain();
 }
 
 Dog::Dog(const Dog &copy) {

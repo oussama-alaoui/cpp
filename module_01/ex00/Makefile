@@ -2,7 +2,7 @@ NAME = zombie
 
 HEADERS = zombie.hpp
 
-SRC = main.cpp newZombie.cpp randomChump.cpp zombie.cpp
+SRC = main.cpp new (std::nothrow) Zombie.cpp randomChump.cpp zombie.cpp
 
 CXX = c++
 

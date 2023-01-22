@@ -2,7 +2,7 @@
 
 int main()
 {
-    ClapTrap *clapTrap = new ClapTrap("CL4P-TP");
+    ClapTrap *clapTrap = new (std::nothrow)  ClapTrap("CL4P-TP");
     if (!clapTrap) {
         std::cout << "Error: cannot allocate memory for ClapTrap" << std::endl;
         return 1;

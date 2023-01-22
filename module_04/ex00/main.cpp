@@ -5,9 +5,9 @@
 int main()
 {
     std::cout << "====================" << std::endl;
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    const Animal* meta = new (std::nothrow)  Animal();
+    const Animal* j = new (std::nothrow)  Dog();
+    const Animal* i = new (std::nothrow)  Cat();
     std::cout << "Type: " << j->getType() << " " << std::endl;
     std::cout << "Type: " << i->getType() << " " << std::endl;
     i->makeSound(); //will output the cat sound!
@@ -16,8 +16,8 @@ int main()
     delete meta;
     std::cout << "====================" << std::endl;
 
-    const WrongAnimal *wrong = new WrongAnimal();
-    const WrongAnimal *wrongCat = new WrongCat();
+    const WrongAnimal *wrong = new (std::nothrow)  WrongAnimal();
+    const WrongAnimal *wrongCat = new (std::nothrow)  WrongCat();
 
     std::cout << "Wrong Type: " << wrong->getType() << " " << std::endl;
     std::cout << "WrongCat Type: " << wrongCat->getType() << " " << std::endl;
