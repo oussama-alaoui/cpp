@@ -1,11 +1,12 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#pragma once
 
 #include <string>
 #include <iostream>
 #include <stdexcept>
+
+#include "Form.hpp"
 
 class Bureaucrat {
 public:
@@ -28,6 +29,8 @@ public:
     int getGrade() const;
     void incrementGrade();
     void decrementGrade();
+
+    void signForm(Form& f);
 
 private:
     const std::string name;
