@@ -30,7 +30,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
 }
 
 Bureaucrat::~Bureaucrat() {
-    std::cout << "destructor called" << std::endl;
 }
 
 const std::string& Bureaucrat::getName() const {
@@ -66,4 +65,13 @@ const char* Bureaucrat::GradeTooHighException::what() const throw(){
 
 const char* Bureaucrat::GradeTooLowException::what() const throw(){
     return ("Grade to Low Exception");
+}
+
+void Bureaucrat::signForm(Form &f){
+    try {
+        f.beSigned(*this);
+        std::cout << name << " signs " << f.getName() << std::endl;
+    } catch (std::exception& e) {
+        std::cout << name << " cannot sign " << f.getName() << " because " << e.what() << std::endl;
+    }
 }
