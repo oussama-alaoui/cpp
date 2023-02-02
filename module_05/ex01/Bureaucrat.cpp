@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : name(""){
@@ -6,6 +7,13 @@ Bureaucrat::Bureaucrat() : name(""){
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade) {
     std::cout << "prametrize constructor called" << std::endl;
+=======
+// Bureaucrat.cpp
+
+#include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat(std::string name, int grade) : name(name) {
+>>>>>>> 46c3d65cfc5524f780aee1ffb9c986fdecb464e1
     if (grade < 1) {
         throw GradeTooHighException();
     } else if (grade > 150) {
@@ -14,6 +22,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade) {
     this->grade = grade;
 }
 
+<<<<<<< HEAD
 Bureaucrat::Bureaucrat(const Bureaucrat &copy){
     std::cout << "copy constructor called" << std::endl;
     *this = copy; 
@@ -29,6 +38,8 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
     return (*this);
 }
 
+=======
+>>>>>>> 46c3d65cfc5524f780aee1ffb9c986fdecb464e1
 Bureaucrat::~Bureaucrat() {
 }
 
@@ -59,6 +70,7 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {
     return os;
 }
 
+<<<<<<< HEAD
 const char* Bureaucrat::GradeTooHighException::what() const throw(){
     return ("Grade to High Exception");
 }
@@ -68,6 +80,9 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 }
 
 void Bureaucrat::signForm(Form &f){
+=======
+void Bureaucrat::signForm(Form& f) {
+>>>>>>> 46c3d65cfc5524f780aee1ffb9c986fdecb464e1
     try {
         f.beSigned(*this);
         std::cout << name << " signs " << f.getName() << std::endl;
