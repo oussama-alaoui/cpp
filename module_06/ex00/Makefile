@@ -1,10 +1,10 @@
-NAME = Bureaucrat03
+NAME = convert
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+SRC = main.cpp convert.cpp
 
 CXX = c++
 
-HEADER = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
+HEADER = convert.hpp
 
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror 
 

@@ -104,6 +104,8 @@
         "__node_handle": "cpp",
         "__tree": "cpp",
         "queue": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "__cxx_version": "cpp",
+        "new": "cpp"
     }
 }

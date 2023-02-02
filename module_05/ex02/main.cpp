@@ -28,5 +28,7 @@ int main( void )
     } catch (std::exception &e) {
         std::cout << e.what() << std::endl;
     }
+    
+        // {system("leaks Bureaucrat02");}
     return EXIT_SUCCESS;
 }

@@ -1,10 +1,10 @@
-NAME = Bureaucrat03
+NAME = identify
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+SRC = main.cpp Base.cpp
 
 CXX = c++
 
-HEADER = Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
+HEADER = Base.hpp A.hpp B.hpp C.hpp
 
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror 
 

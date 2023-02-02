@@ -23,7 +23,6 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
     checkExecution(executor);
-    std::cout << "h----------------" << std::endl;
     std::ofstream file;
     file.open(this->target + "_shrubbery");
     file << "    cxcxcc c  ccxcc" << std::endl;
