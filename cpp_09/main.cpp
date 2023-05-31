@@ -1,12 +1,24 @@
 #include "include.hpp"
 
-int parser(std::string date, std::string value)
+void search_and_print(std::string date, std::string value, std::map<std::string, std::string> data)
+{
+    std::map<std::string, std::string>::iterator it;
+    it = data.find(date);
+    if (it != data.end())
+    {
+        std::cout << "Date: " << date << " | Value: " << value << " | Average: " << it->second << std::endl;
+    }
+    else
+        std::cout << "Error: date not found => " << date << std::endl;
+}
+
+int parser(std::string date, std::string value, std::map<std::string, std::string> data)
 {
     if (valide_date(date))
     {
-        if(ft_isdigit(value) && stoi(value) > 0 && stoi(value) < 1000)
+        if(ft_isdigit(value) && stof(value) > 0 && stof(value) < 1000)
         {
-            std::cout << date << " => " << value << std::endl;
+            search_and_print(date, value, data);
         }
         else
             std::cout << "Error: bad input => " << stoi(value) << std::endl;
@@ -36,11 +48,13 @@ void callculate(std::map<std::string, std::string> data, std::string file)
             std::cout << "Error: Invalid line: " << std::endl;
         date = line.substr(0, line.find('|'));
         value = line.substr(line.find('|') + 1, line.size());
-        if (date.size() == 0 || value.size() == 0)
-            std::cout << "Error: Invalid line: " << std::endl;
+        if (date.size() == 0 || value.size() == 0 || value.size() > 4)
+        {
+            std::cout << "Error: line: " << line << std::endl;
+        }
         else
         {
-            parser(date, value);
+            parser(date, value, data);
         }
     }
 }

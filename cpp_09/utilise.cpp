@@ -43,26 +43,7 @@ int valide_date(std::string str)
         {
             if ( std::stoi(date[1]) > 0 && std::stoi(date[1]) < 13 && std::stoi(date[2]) > 0 && std::stoi(date[2]) < 32)
                 return 1;
-            else
-            {
-                std::cout << "Error: Invalid date format1: " << str << std::endl;
-                return 0;
-            }
         }
-        else
-        {
-            std::cout << "Error: Invalid date format2: " << str << std::endl;
-            // print size of each part of date
-            std::cout << "date[0].size() = " << date[0].size() << std::endl;
-            std::cout << "date[1].size() = " << date[1].size() << std::endl;
-            std::cout << "date[2].size() = " << date[2].size() << std::endl;
-            return 0;
-        }
-    }
-    else
-    {
-        std::cout << "Error: Invalid date format3: " << str << std::endl;
-        return 0;
     }
     return 0;
 }
@@ -75,10 +56,7 @@ int ft_isdigit(std::string value)
         if (value[i] == '.' || value[i] == ',' || (value[i] == ' ' && i == 0))
             i++;
         if (!std::isdigit(value[i]))
-        {
-            std::cout << "Error: Invalid value format: " << value[i+1] << std::endl;
             return 0;
-        }
         i++;
     }
     return 1;
